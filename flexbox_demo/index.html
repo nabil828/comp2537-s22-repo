@@ -1,0 +1,69 @@
+<html>
+
+
+<head>
+    <!-- add internal css  -->
+    <style>
+        html,
+        body {
+            height: 100%;
+        }
+
+        article {
+            height: 100%;
+            display: flex;
+            background-color: white;
+            align-items: center;
+            align-content: flex-start;
+            flex-direction: row;
+        }
+
+
+        p {
+            color: black;
+            width: 200px;
+        }
+
+        #p1 {
+            background-color: #a2b9bc;
+
+        }
+
+        #p2 {
+            background-color: #b2ad7f;
+
+        }
+
+        #p3 {
+            background-color: #878f99;
+        }
+
+
+
+        @media (max-width: 400px) {
+
+            /* smaller screens */
+            article {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <article>
+        <p id="p1"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium rem, doloremque reiciendis
+            soluta culpa veritatis maxime commodi fuga totam nisi neque earum at distinctio assumenda quae quia eos
+            ducimus beatae!</p>
+        <p id="p2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Magnam iusto maiores vero esse. Neque odio
+            animi expedita explicabo dolorem perspiciatis? Voluptatum fugiat nesciunt placeat minus ut, sapiente
+            voluptate. Laborum, tenetur.</p>
+        <p id="p3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea voluptas, repudiandae consectetur
+            aliquid perspiciatis itaque quibusdam, saepe dignissimos odio doloribus optio harum ducimus non. Pariatur
+            aliquid accusantium sequi tenetur illo?
+        </p>
+
+    </article>
+</body>
+
+</html>
