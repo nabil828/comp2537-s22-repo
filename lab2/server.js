@@ -7,9 +7,9 @@ app.listen(5000, function (err) {
         console.log(err);
 })   
 
-// app.get('/', function (req, res) {
-//     res.send('<h1> GET request to homepage </h1>')    
-// })
+app.get('/search', function (req, res) {
+    res.sendFile(__dirname + "/public/search.html");
+})
 
 const https = require('https');
 
@@ -30,11 +30,7 @@ app.get('/profile/:id', function (req, res) {
             data = JSON.parse(data)
             // console.log(data)
 
-            hp_ =  data.stats.filter((obj_)=>{
-                return obj_.stat.name == "hp"
-            }).map( (obj_2)=> {
-                return obj_2.base_stat
-            })
+           
             console.log(hp_)
             res.render("profile.ejs", {
                 "id": req.params.id,
