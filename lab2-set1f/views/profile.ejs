@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1> Hi there!
+        <br>
+
+
+        This Pokemon  id: <%= id %>
+        <br>
+        This Pokemon  id: <%= name %>
+
+        <br>
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%= id %>.png" alt="">
+        <br>
+        Stats.
+        The HP is  
+        <progress id="file" value="<%= hp %>" max="255"> <%= hp %>% </progress>
+
+
+       
+    </h1>
+</body>
+
+</html>
