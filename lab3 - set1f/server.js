@@ -43,7 +43,7 @@ app.get('/timeline/getAllEvents', function (req, res) {
         } else {
             console.log("Data " + data);
         }
-        res.send("Insertion is successful");
+        res.send(data);
     });
 })
 
