@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Hello! This is  <%= locals.poke_name %> profile page. Id is <%= id %>.
+
+    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/<%=id%>.png" alt="">
+
+    HP    <progress id="file" value="<%= hp %>" max="100"> <%= hp %>% </progress>
+    Weight <progress id="file" value="<%= weight %>" max="100"> <%= weight %>% </progress>
+    
+    Attack    <progress id="file" value="<%= attack %>" max="100"> <%= attack %>% </progress>
+    Defense <progress id="file" value="<%= defense %>" max="100"> <%= defense %>% </progress>
+    
+    Height    <progress id="file" value="<%= height %>" max="100"> <%= height %>% </progress>
+    'special-attack' <progress id="file" value="<%= 'special-attack' %>" max="100"> <%= 'special-attack' %>% </progress>
+    
+    'special-Defense' <progress id="file" value="<%= 'special-Defense' %>" max="100"> <%= 'special-Defense' %>% </progress>
+
+</body>
+</html>
