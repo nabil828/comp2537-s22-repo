@@ -29,7 +29,7 @@ const timelineModel = mongoose.model("timelineevents", timelineSchema);
 // const cityModel = mongoose.model("cities", citySchema);
 
 
-app.get('/timeline', function (req, res) {
+app.get('/timeline/getAll', function (req, res) {
     timelineModel.find({}, function (err, timelineEvents) {
         if (err) {
             console.log("Error " + err);
