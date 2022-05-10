@@ -71,14 +71,27 @@ async function display(type_) {
     })
 
 }
+function addNewEvent(poke_type){
+    $.ajax({
+        url: "http://localhost:5000/timeline/insert",
+        type: "put",
+        data: {
+            text: `Client has search for ${poke_type}` ,
+            hits: 1,
+            time: "at time Y"
+        },
+        success: (res)=>{console.log(res)}
+    })
+}
 
 async function setup() {
     await init_menu();
     // display all the grass pokemon
-    display($("#poke_type option:selected").val())
+    // display($("#poke_type option:selected").val())
     $("#poke_type").change(() => {
         poke_type = $("#poke_type option:selected").val();
-        display($("#poke_type option:selected").val())
+        // display($("#poke_type option:selected").val())
+        addNewEvent(poke_type)
     })
 }
 

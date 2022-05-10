@@ -6,7 +6,10 @@ app.set('view engine', 'ejs');
 
 const mongoose = require('mongoose');
 
-
+app.listen(5000, function (err) {
+    console.log("listinning tpo 6000")
+    if (err) console.log(err);
+})
 
 app.use(bodyparser.urlencoded({
     extended: true
@@ -48,7 +51,7 @@ app.put('/timeline/insert', function (req, res) {
         } else {
             console.log("Data " + data);
         }
-        res.send(data);
+        res.send("Insertion is successful!");
     });
 })
 
@@ -82,9 +85,7 @@ app.get('/timeline/inscreaseHits/:id', function (req, res) {
         res.send("Update request is successful!");
     });
 })
-app.listen(5000, function (err) {
-    if (err) console.log(err);
-})
+
 
 app.use(express.static('./public'));
 
