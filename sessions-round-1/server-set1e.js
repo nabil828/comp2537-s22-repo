@@ -6,10 +6,28 @@ var session = require('express-session')
 // Use the session middleware
 app.use(session({ secret: 'ssshhhhh', saveUninitialized: true, resave: true }));
 
-users = {
-    "user1": "pass1",
-    "user2": "pass2",
-}
+users = [
+    {
+        username: "user1",
+        password: "pass1",
+        shoppingCart: [
+            {
+                pokeID: 25,
+                quantity: 2,
+                price: 32
+            },
+            {
+                pokeID: 21,
+                quantity: 4,
+                price: 16
+            }
+        ]
+    },
+    {
+        username: "user2",
+        password: "pass2"
+    },
+]
 
 // declaring a global middleware
 app.use(logger1)
@@ -34,9 +52,20 @@ app.listen(5000, function (err) {
     if (err) console.log(err);
 })
 
+app.get('/userProfile/:name', function (req, res) {
+    res.write(`Welcome ${req.params.name}`)
+    res.write(`<br>`)
+    // console.log(users.filter( user => user.username == req.params.name))
+    res.write(JSON.stringify(
+                 users.filter(user => user.username == req.params.name)[0].shoppingCart[0]
+        )
+        )
+res.send()
+})
+
 app.get('/', auth, function (req, res) {
     console.log("/ route got accessed!")
-    res.send(`Welcome ${req.session.user}`)
+    res.send(`Welcome <a href="/userProfile/${req.session.user}"> ${req.session.user} </a>`)
 
 })
 
@@ -46,7 +75,10 @@ app.get('/login/', function (req, res, next) {
 })
 
 app.get('/login/:user/:pass', function (req, res, next) {
-    if (users[req.params.user] == req.params.pass) {
+
+    if (users.filter(user => user.username == req.params.user)[0].password == req.params.pass)
+    // [req.params.user] == req.params.pass)
+    {
         req.session.authenticated = true
         req.session.user = req.params.user
         res.send("Successful Login!")
