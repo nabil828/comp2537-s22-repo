@@ -1,0 +1,35 @@
+   
+With the CSS transform property you can use the following 2D transformation methods:
+
+translate()
+rotate()
+scaleX()
+scaleY()
+scale()
+skewX()
+skewY()
+skew()
+matrix() 
+
+
+CSS transitions allows you to change property values smoothly, over a given duration.
+
+transition
+transition-delay
+transition-duration
+transition-property
+transition-timing-function 
+
+
+
+CSS allows animation of HTML elements without using JavaScript or Flash!
+
+@keyframes
+animation-name
+animation-duration
+animation-delay
+animation-iteration-count
+animation-direction
+animation-timing-function
+animation-fill-mode
+animation 
