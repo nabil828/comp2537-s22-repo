@@ -17,7 +17,7 @@ body{
 .card{
     width: calc(33.3% - 10px);
     position: relative;
-    transition: transform 3s;
+    transition: transform .5s;
     transform-style: preserve-3d;
     
 }
