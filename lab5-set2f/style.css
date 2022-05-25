@@ -10,10 +10,11 @@ body{
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+    gap: 10px
 }
 
 .card{
-    width: 33.3%;
+    width: calc(33.3% - 10px);
     position: relative;
     transition: transform 1s;
     transform-style: preserve-3d;
