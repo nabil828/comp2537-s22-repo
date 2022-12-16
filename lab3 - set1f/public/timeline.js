@@ -37,6 +37,8 @@ function increamentHitsByOne(){
         type:"get",
         success: (e)=>{console.log(e)}
     })
+
+    // reload the main div
 }
 function setup() {
     loadEvents()

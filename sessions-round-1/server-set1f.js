@@ -73,7 +73,7 @@ app.get('/userProfile/:name', auth, function(req, res){
     tmp += `Welcome ${req.params.name}`
     
     tmp += JSON.stringify(users.filter(  x => x.username == req.params.name)[0].shoppingCart)
-    res.send(tmp)
+    res.send()
 })
 
 
